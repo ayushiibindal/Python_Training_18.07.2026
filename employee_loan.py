@@ -30,7 +30,7 @@ if age >= 21 and age <= 58 and experience >= 2 and  credit_score >= 650:
 
 #git init, add, commit
 
-
+#type nul> file name.py
 
 
 
