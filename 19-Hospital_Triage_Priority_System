@@ -1,0 +1,16 @@
+age = int(input("Enter Patient Age: "))
+oxygen = int(input("Enter Oxygen Level (%): "))
+heart_rate = int(input("Enter Heart Rate (bpm): "))
+severity = input("Enter Symptom Severity (mild/moderate/severe): ").lower()
+
+if oxygen < 90:
+    print(f"\nPriority Status: Emergency")
+
+elif age >= 60 and severity == "severe":
+    print(f"\nPriority Status: High")
+
+elif severity == "mild":
+    print(f"\nPriority Status: General Queue")
+
+else:
+    print(f"\nPriority Status: Medium")

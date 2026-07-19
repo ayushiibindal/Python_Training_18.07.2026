@@ -1,0 +1,30 @@
+cart_value = float(input("Enter Cart Value: ₹"))
+customer_type = input("Enter Customer Type (new/regular): ").lower()
+coupon = input("Enter Coupon Code: ").upper()
+membership = input("Membership Status (premium/normal): ").lower()
+
+discount = 0
+shipping = 100
+
+if membership == "premium":
+    shipping = 0
+    print(f"\nFree Shipping for Premium Members")
+
+elif cart_value > 5000:
+    discount = cart_value * 0.20
+
+elif cart_value > 2000:
+    discount = cart_value * 0.10
+
+if coupon == "SAVE100":
+    discount += 100
+else:
+    print(f"\nInvalid Coupon Code")
+
+final_amount = cart_value - discount + shipping
+
+print(f"\nCustomer Type: {customer_type.title()}")
+print(f"Membership: {membership.title()}")
+print(f"Discount: ₹{discount}")
+print(f"Shipping Charge: ₹{shipping}")
+print(f"Final Payable Amount: ₹{final_amount}")

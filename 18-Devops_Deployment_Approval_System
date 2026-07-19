@@ -1,0 +1,20 @@
+test_coverage = int(input("Enter Test Coverage Percentage(%): "))
+security_scan = input("Security Scan Status (pass/fail): ").lower()
+code_review = input("Code Review Status (approved/pending): ").lower()
+environment = input("Enter Environment (production/staging/development): ").lower()
+
+if environment == "production" and security_scan == "pass" and code_review == "approved" and test_coverage >= 80:
+    print(f"\nDeployment Status: Production Deployment Approved")
+
+elif security_scan == "fail":
+    print(f"\nDeployment Status: Rejected")
+    print(f"Reason: Security Scan Failed")
+
+elif environment == "staging" and security_scan == "pass":
+    print(f"\nDeployment Status: Staging Deployment Approved with Caution")
+
+elif environment == "development" and code_review == "pending":
+    print(f"\nDeployment Status: Conditional Approval")
+
+else:
+    print(f"\nDeployment Status: Approval Pending")
